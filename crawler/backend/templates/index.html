@@ -1,0 +1,55 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<script>
+
+
+function myFunction() {
+        alert("The form was submitted");
+        const data = { username: 'example' };
+
+    fetch('http://localhost:5000/data', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+}
+
+
+</script>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body>
+    <div class="container">
+        <div class="col-md-6 mx-auto text-center">
+            <div class="header-title">
+                <h1 class="wv-heading--title">
+                   Breeder Info
+                </h1>
+                <h2 class="wv-heading--subtitle">
+                    Download the Breeder Info based on the Search term and number of google results
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="myform form ">
+                    <form action="/data" method="post" onsubmit="myFunction()">
+                        <div class="form-group">
+                            <input type="text" name="search" class="form-control my-input" id="search" placeholder="Enter the Search term">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="number" class="form-control my-input" id="number"
+                                placeholder="Number of Search Results">
+                        </div>
+                        <div class="text-center ">
+                            <button type="submit" class=" btn btn-block send-button tx-tfm">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
